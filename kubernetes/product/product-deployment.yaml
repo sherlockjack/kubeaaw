@@ -24,15 +24,15 @@ spec:
         - name: JWT_SECRET
           value: "auth_ms_jwt_secret"
         - name: DB_HOST
-          value: "db-products"
+          value: "database-2.cadutjy29djn.us-east-1.rds.amazonaws.com"
         - name: DB_PORT
           value: "5432"
         - name: DB_USER
           value: "postgres"
         - name: DB_PASSWORD
-          value: "postgres"
+          value: "R7o3gHjVoGeXUQMNwbkN"
         - name: DB_NAME
-          value: "marketplace"
+          value: "products"
         - name: AUTH_MS_URL
           value: "http://authentication"
         - name: TENANT_MS_URL
@@ -40,7 +40,7 @@ spec:
         - name: PORT
           value: "80"
         - name: REDIS_HOST
-          value: "valkey"
+          value: "app-pq0e3b.serverless.use1.cache.amazonaws.com"
         - name: REDIS_PORT
           value: "6379"
         resources:
