@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orders-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: orders-app
+  template:
+    metadata:
+      labels:
+        app: orders-app
+    spec:
+      containers:
+      - name: orders-app
+        image: reiounagata/aaw-marketplace-bebas-orders:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+        env:
+        - name: TENANT_ID
+          value: "8bd087f4-a45c-4126-b229-006dcf939625"
+        - name: JWT_SECRET
+          value: "auth_ms_jwt_secret"
+        - name: DB_HOST
+          value: "db-orders"
+        - name: DB_PORT
+          value: "5432"
+        - name: DB_USER
+          value: "postgres"
+        - name: DB_PASSWORD
+          value: "postgres"
+        - name: DB_NAME
+          value: "marketplace"
+        - name: AUTH_MS_URL
+          value: "http://authentication"
+        - name: TENANT_MS_URL
+          value: "http://tenant"
+        - name: PORT
+          value: "80"
+        - name: REDIS_HOST
+          value: "valkey"
+        - name: REDIS_PORT
+          value: "6379"
+        resources:
+          requests:
+            cpu: "0.2"
+            memory: "64Mi"
+          limits:
+            cpu: "0.4"
+            memory: "128Mi"
