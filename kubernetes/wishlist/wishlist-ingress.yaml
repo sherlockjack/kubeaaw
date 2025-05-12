@@ -9,7 +9,7 @@ spec:
   rules:
   - http:
       paths:
-      - path: /wishlist
+      - path: /wishlist/
         pathType: Prefix
         backend:
           service:
