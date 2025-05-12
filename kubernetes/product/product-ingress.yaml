@@ -8,7 +8,7 @@ spec:
   rules:
   - http:
       paths:
-      - path: /products(/|$)(.*)
+      - path: /products
         pathType: Prefix
         backend:
           service:
