@@ -10,7 +10,7 @@ spec:
   - http:
       paths:
       - path: /tenant(/|$)(.*)
-        pathType: Prefix
+        pathType: ImplementationSpecific
         backend:
           service:
             name: tenant-service

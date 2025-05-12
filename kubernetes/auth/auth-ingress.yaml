@@ -3,18 +3,20 @@ kind: Ingress
 metadata:
   name: auth-ingress
   annotations:
-    # If your app expects requests at "/", strip the "/auth/" prefix
-    nginx.ingress.kubernetes.io/rewrite-target: /
-    # Add other annotations if needed (e.g., for SSL, CORS)
+    nginx.ingress.kubernetes.io/rewrite-target: / # Atau anotasi lain yang sesuai controller kamu
+    # Jika menggunakan AWS Load Balancer Controller, anotasi mungkin berbeda
 spec:
-  ingressClassName: nginx # Make sure this matches your Ingress Controller setup
+  # Pastikan ingressClassName sesuai dengan controller yang kamu gunakan (nginx atau alb)
+  ingressClassName: nginx # Ganti ke 'alb' jika menggunakan AWS Load Balancer Controller
   rules:
   - http:
       paths:
-      - path: /auth(/|$)(.*) # More robust path matching for prefix
-        pathType: Prefix    # Use Prefix for path-based routing
+      - path: /auth(/|$)(.*)
+        # ----- UBAH INI -----
+        pathType: ImplementationSpecific
+        # --------------------
         backend:
           service:
-            name: auth-service # Matches the corrected Service name
+            name: auth-service
             port:
-              number: 8000     # Matches the 'port' in the corrected auth-service.yaml
+              number: 8000

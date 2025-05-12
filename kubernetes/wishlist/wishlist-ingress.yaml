@@ -10,7 +10,7 @@ spec:
   - http:
       paths:
       - path: /wishlist(/|$)(.*)
-        pathType: Prefix
+        pathType: ImplementationSpecific
         backend:
           service:
             name: wishlist-service
