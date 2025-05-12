@@ -10,7 +10,7 @@ spec:
   - http:
       paths:
       - path: /orders/
-        pathType: prefix
+        pathType: Prefix
         backend:
           service:
             name: orders-service

@@ -10,7 +10,7 @@ spec:
   - http:
       paths:
       - path: /tenant/
-        pathType: prefix
+        pathType: Prefix
         backend:
           service:
             name: tenant-service
