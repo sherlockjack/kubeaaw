@@ -9,10 +9,10 @@ spec:
   rules:
   - http:
       paths:
-      - path: /wishlist/
+      - path: /wishlist(/|$)(.*)
         pathType: Prefix
         backend:
           service:
             name: wishlist-service
             port:
-              number: 8004
+              number: 8004 # Matches the 'port' in the corrected wishlist-service.yaml

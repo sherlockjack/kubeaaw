@@ -3,16 +3,18 @@ kind: Ingress
 metadata:
   name: auth-ingress
   annotations:
+    # If your app expects requests at "/", strip the "/auth/" prefix
     nginx.ingress.kubernetes.io/rewrite-target: /
+    # Add other annotations if needed (e.g., for SSL, CORS)
 spec:
-  ingressClassName: nginx
+  ingressClassName: nginx # Make sure this matches your Ingress Controller setup
   rules:
   - http:
       paths:
-      - path: /auth/
-        pathType: Prefix
+      - path: /auth(/|$)(.*) # More robust path matching for prefix
+        pathType: Prefix    # Use Prefix for path-based routing
         backend:
           service:
-            name: auth-service
+            name: auth-service # Matches the corrected Service name
             port:
-              number: 8000
+              number: 8000     # Matches the 'port' in the corrected auth-service.yaml

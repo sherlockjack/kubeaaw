@@ -9,10 +9,10 @@ spec:
   rules:
   - http:
       paths:
-      - path: /orders/
+      - path: /orders(/|$)(.*)
         pathType: Prefix
         backend:
           service:
             name: orders-service
             port:
-              number: 8001
+              number: 8001 # Matches the 'port' in the corrected orders-service.yaml

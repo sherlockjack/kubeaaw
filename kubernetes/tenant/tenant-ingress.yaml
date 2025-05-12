@@ -9,10 +9,10 @@ spec:
   rules:
   - http:
       paths:
-      - path: /tenant/
+      - path: /tenant(/|$)(.*)
         pathType: Prefix
         backend:
           service:
             name: tenant-service
             port:
-              number: 8003
+              number: 8003 # Matches the 'port' in the corrected tenant-service.yaml
