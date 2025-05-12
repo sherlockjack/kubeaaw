@@ -9,8 +9,8 @@ spec:
   rules:
   - http:
       paths:
-      - path: /orders(/|$)(.*)
-        pathType: ImplementationSpecific
+      - path: /orders/
+        pathType: prefix
         backend:
           service:
             name: orders-service

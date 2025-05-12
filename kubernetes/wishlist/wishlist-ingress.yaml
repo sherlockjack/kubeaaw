@@ -9,8 +9,8 @@ spec:
   rules:
   - http:
       paths:
-      - path: /wishlist(/|$)(.*)
-        pathType: ImplementationSpecific
+      - path: /wishlist/
+        pathType: prefix
         backend:
           service:
             name: wishlist-service

@@ -9,8 +9,8 @@ spec:
   rules:
   - http:
       paths:
-      - path: /products(/|$)(.*)
-        pathType: ImplementationSpecific
+      - path: /product/
+        pathType: prefix
         backend:
           service:
             name: product-service

@@ -11,10 +11,8 @@ spec:
   rules:
   - http:
       paths:
-      - path: /auth(/|$)(.*)
-        # ----- UBAH INI -----
-        pathType: ImplementationSpecific
-        # --------------------
+      - path: /auth/
+        pathType: prefix
         backend:
           service:
             name: auth-service
