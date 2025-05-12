@@ -1,21 +1,17 @@
-# wishlist-ingress.yaml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: wishlist-ingress
   annotations:
-    kubernetes.io/ingress.class: alb
-    alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/target-type: ip
-    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80}]'
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   rules:
-    - http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: wishlist-service
-                port:
-                  number: 8004
+  - http:
+      paths:
+      - path: /wishlist(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: wishlist-service
+            port:
+              number: 8004

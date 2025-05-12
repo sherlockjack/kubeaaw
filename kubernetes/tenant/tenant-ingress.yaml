@@ -1,21 +1,17 @@
-# tenant-ingress.yaml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: tenant-ingress
   annotations:
-    kubernetes.io/ingress.class: alb
-    alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/target-type: ip
-    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80}]'
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   rules:
-    - http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: tenant-service
-                port:
-                  number: 8003
+  - http:
+      paths:
+      - path: /tenant(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: tenant-service
+            port:
+              number: 8003
