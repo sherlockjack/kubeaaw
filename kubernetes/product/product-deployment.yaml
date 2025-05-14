@@ -34,9 +34,9 @@ spec:
         - name: DB_NAME
           value: "products"
         - name: AUTH_MS_URL
-          value: "http://authentication"
+          value: "http://kelompok-1521852694.us-east-1.elb.amazonaws.com/auth/"
         - name: TENANT_MS_URL
-          value: "http://tenant"
+          value: "http://kelompok-1521852694.us-east-1.elb.amazonaws.com/tenant/"
         - name: PORT
           value: "80"
         - name: REDIS_HOST
