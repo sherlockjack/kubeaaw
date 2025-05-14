@@ -24,13 +24,13 @@ spec:
         - name: JWT_SECRET
           value: "auth_ms_jwt_secret"
         - name: DB_HOST
-          value: "database-2.cadutjy29djn.us-east-1.rds.amazonaws.com"
+          value: "34.198.24.200"
         - name: DB_PORT
           value: "5432"
         - name: DB_USER
           value: "postgres"
         - name: DB_PASSWORD
-          value: "R7o3gHjVoGeXUQMNwbkN"
+          value: "I5vgT5S8QFXM5z4sdN9N"
         - name: DB_NAME
           value: "orders"
         - name: AUTH_MS_URL
