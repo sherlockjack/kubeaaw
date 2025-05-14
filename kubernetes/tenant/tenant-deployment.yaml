@@ -15,7 +15,7 @@ spec:
       containers:
       - name: tenant-app
         image: reiounagata/aaw-marketplace-bebas-tenant:latest
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
         env:
@@ -45,8 +45,8 @@ spec:
           value: "6379"
         resources:
           requests:
-            cpu: "0.5"
-            memory: "128Mi"
+            cpu: "0.2"
+            memory: "64Mi"
           limits:
-            cpu: "0.7"
-            memory: "256Mi"
+            cpu: "0.4"
+            memory: "128Mi"
