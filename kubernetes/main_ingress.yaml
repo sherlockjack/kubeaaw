@@ -19,7 +19,14 @@ spec:
             name: auth-service
             port:
               number: 8000
-      - path: /orders
+      - path: /order
+        pathType: Prefix
+        backend:
+          service:
+            name: orders-service
+            port:
+              number: 8001
+      - path: /cart
         pathType: Prefix
         backend:
           service:
