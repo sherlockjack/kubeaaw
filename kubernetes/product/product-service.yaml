@@ -11,3 +11,4 @@ spec:
       port: 8002
       targetPort: 80
       nodePort: 30002
+externalTrafficPolicy: Local
