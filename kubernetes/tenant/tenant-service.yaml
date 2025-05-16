@@ -8,7 +8,7 @@ spec:
     app: tenant-app
   ports:
     - protocol: TCP
-      port: 8004
+      port: 8003
       targetPort: 80
       nodePort: 30003
 

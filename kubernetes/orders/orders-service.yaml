@@ -8,7 +8,7 @@ spec:
     app: orders-app
   ports:
     - protocol: TCP
-      port: 8004
+      port: 8001
       targetPort: 80
       nodePort: 30001
 
