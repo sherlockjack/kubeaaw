@@ -3,11 +3,11 @@ kind: Service
 metadata:
   name: tenant-service
 spec:
-  type: LoadBalancer  
+  type: ClusterIP  
   selector:
     app: tenant-app
   ports:
     - protocol: TCP
       port: 8003
       targetPort: 80
-      nodePort: 30003
+
