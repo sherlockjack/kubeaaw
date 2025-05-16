@@ -18,32 +18,32 @@ spec:
           service:
             name: auth-service
             port:
-              number: 8001
+              number: 8000
       - path: /orders
         pathType: Prefix
         backend:
           service:
             name: orders-service
             port:
-              number: 8002
+              number: 8001
       - path: /product
         pathType: Prefix
         backend:
           service:
             name: product-service
             port:
-              number: 8003
+              number: 8002
       - path: /tenant
         pathType: Prefix
         backend:
           service:
             name: tenant-service
             port:
-              number: 8004
+              number: 8003
       - path: /wishlist
         pathType: Prefix
         backend:
           service:
             name: wishlist-service
             port:
-              number: 8005
+              number: 8004
