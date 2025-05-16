@@ -3,10 +3,11 @@ kind: Service
 metadata:
   name: auth-service
 spec:
-  type: ClusterIP  
+  type: LoadBalancer  
   selector:
     app: auth-app
   ports:
     - protocol: TCP
       port: 8000
       targetPort: 80
+      nodePort: 30080

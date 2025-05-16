@@ -3,10 +3,11 @@ kind: Service
 metadata:
   name: wishlist-service
 spec:
-  type: ClusterIP  
+  type: LoadBalancer  
   selector:
     app: wishlist-app
   ports:
     - protocol: TCP
       port: 8004
       targetPort: 80
+      nodePort: 30080
