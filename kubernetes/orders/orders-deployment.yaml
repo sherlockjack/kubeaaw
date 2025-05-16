@@ -45,8 +45,8 @@ spec:
           value: "6379"
         resources:
           requests:
-            cpu: "0.2"
-            memory: "64Mi"
+            cpu: "0.25"
+            memory: "384Mi"
           limits:
-            cpu: "0.4"
-            memory: "128Mi"
+            cpu: "0.5"
+            memory: "774Mi"
