@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: tenant-service
 spec:
-  type: LoadBalancer  
+  type: NodePort  
   selector:
     app: tenant-app
   ports:
