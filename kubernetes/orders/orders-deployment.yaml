@@ -24,7 +24,7 @@ spec:
         - name: JWT_SECRET
           value: "auth_ms_jwt_secret"
         - name: DB_HOST
-          value: "database-2.cadutjy29djn.us-east-1.rds.amazonaws.com"
+          value: "50.17.203.214"
         - name: DB_PORT
           value: "5432"
         - name: DB_USER
