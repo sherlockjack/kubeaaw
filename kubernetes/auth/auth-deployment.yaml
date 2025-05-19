@@ -34,9 +34,9 @@ spec:
         - name: DB_NAME
           value: "authentication"
         - name: AUTH_MS_URL
-          value: "http://k8s-bebasrouting-7cdee03608-915332105.us-east-1.elb.amazonaws.com/"
+          value: "http://k8s-bebasrouting-7cdee03608-915332105.us-east-1.elb.amazonaws.com"
         - name: TENANT_MS_URL
-          value: "http://k8s-bebasrouting-7cdee03608-915332105.us-east-1.elb.amazonaws.com/"
+          value: "http://k8s-bebasrouting-7cdee03608-915332105.us-east-1.elb.amazonaws.com"
         - name: PORT
           value: "80"
         - name: REDIS_HOST
