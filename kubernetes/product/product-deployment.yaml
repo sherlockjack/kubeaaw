@@ -17,6 +17,16 @@ spec:
       labels:
         app: product-app
     spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - product-app
+            topologyKey: kubernetes.io/hostname
       containers:
       - name: product-app
         image: reiounagata/aaw-marketplace-bebas-products:latest
@@ -50,8 +60,8 @@ spec:
           value: "6379"
         resources:
           requests:
-            cpu: "0.25"
+            cpu: "0.125"
             memory: "128Mi"
           limits:
-            cpu: "0.5"
+            cpu: "0.25"
             memory: "256Mi"

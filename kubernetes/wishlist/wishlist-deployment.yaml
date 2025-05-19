@@ -17,6 +17,16 @@ spec:
       labels:
         app: wishlist-app
     spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - wishlist-app
+            topologyKey: kubernetes.io/hostname
       containers:
       - name: wishlist-app
         image: reiounagata/aaw-marketplace-bebas-wishlist:latest
@@ -50,8 +60,8 @@ spec:
           value: "6379"
         resources:
           requests:
-            cpu: "0.25"
+            cpu: "0.125"
             memory: "128Mi"
           limits:
-            cpu: "0.5"
+            cpu: "0.25"
             memory: "256Mi"

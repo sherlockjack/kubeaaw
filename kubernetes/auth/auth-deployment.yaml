@@ -17,6 +17,16 @@ spec:
       labels:
         app: auth-app
     spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - auth-app
+            topologyKey: kubernetes.io/hostname
       containers:
       - name: auth-app
         image: reiounagata/aaw-marketplace-bebas-authentication:latest
@@ -54,8 +64,8 @@ spec:
           value: "8bd087f4-a45c-4126-b229-006dcf939625"
         resources:
           requests:
-            cpu: "0.5"
+            cpu: "0.25"
             memory: "128Mi"
           limits:
-            cpu: "1.0"
+            cpu: "0.5"
             memory: "256Mi"
