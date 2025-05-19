@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: orders-app
-        image: reiounagata/aaw-marketplace-bebas-orders@sha256:5f191496519cd0b6166063098967bfa31224a164c190c3a6afedd97ce9d04181
+        image: reiounagata/aaw-marketplace-bebas-orders:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 80
