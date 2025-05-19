@@ -7,8 +7,8 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: orders-app
-  minReplicas: 2
-  maxReplicas: 11
+  minReplicas: 4
+  maxReplicas: 21
   metrics:
   - type: Resource
     resource:
