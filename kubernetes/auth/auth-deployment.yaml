@@ -50,7 +50,7 @@ spec:
         resources:
           requests:
             cpu: "0.5"
-            memory: "384Mi"
+            memory: "256Mi"
           limits:
             cpu: "1.0"
-            memory: "774Mi"
+            memory: "512Mi"
