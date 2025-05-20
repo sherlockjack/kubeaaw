@@ -26,14 +26,6 @@ spec:
                 values:
                 - orders-app
             topologyKey: kubernetes.io/hostname
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: kubernetes.io/ready
-                operator: In
-                values:
-                - "true"
       containers:
       - name: orders-app
         image: reiounagata/aaw-marketplace-bebas-orders:latest

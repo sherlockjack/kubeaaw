@@ -26,14 +26,6 @@ spec:
                 values:
                 - wishlist-app
             topologyKey: kubernetes.io/hostname
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: kubernetes.io/ready
-                operator: In
-                values:
-                - "true"
       containers:
       - name: wishlist-app
         image: reiounagata/aaw-marketplace-bebas-wishlist:latest
